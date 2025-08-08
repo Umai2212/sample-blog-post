@@ -42,7 +42,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Blog Post - Adventurer Divine</title>
+    <title>Ultimate Guide to Zion’s Hidden Trails - Adventurer Divine</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -143,8 +143,8 @@
 
         /* Hero Section */
         .hero {
-            height: clamp(250px, 60vw, 400px);
-            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+            height: clamp(300px, 60vw, 450px);
+            background: url('https://images.unsplash.com/photo-1505826758259-7a03c4f86d91') no-repeat center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -159,24 +159,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
         }
 
         .hero-content {
             position: relative;
             color: #fff;
-            padding: clamp(15px, 5vw, 20px);
+            padding: clamp(15px, 5vw, 30px);
+            max-width: 800px;
         }
 
         .hero-content h1 {
-            font-size: clamp(20px, 6vw, 36px);
+            font-size: clamp(24px, 6vw, 40px);
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: clamp(10px, 3vw, 15px);
+        }
+
+        .hero-content p {
+            font-size: clamp(14px, 4vw, 18px);
+            margin-bottom: clamp(10px, 3vw, 15px);
         }
 
         .hero-content .meta {
             font-size: clamp(12px, 3vw, 16px);
             color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 3vw, 20px);
         }
 
         /* Content Wrapper */
@@ -193,18 +202,20 @@
         .main-content {
             flex: 3;
             min-width: clamp(300px, 60%, 800px);
+            max-width: 800px;
             background: #fff;
             border-radius: 10px;
-            padding: clamp(15px, 4vw, 20px);
+            padding: clamp(20px, 5vw, 30px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .sidebar {
             flex: 1;
             min-width: clamp(250px, 30%, 350px);
+            max-width: 350px;
             background: #fff;
             border-radius: 10px;
-            padding: clamp(15px, 4vw, 20px);
+            padding: clamp(20px, 5vw, 30px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
@@ -230,16 +241,42 @@
             display: block;
         }
 
-        .main-content ul {
-            list-style: disc;
+        .main-content blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #2e7d32;
+            padding: clamp(10px, 3vw, 15px);
+            margin: clamp(15px, 4vw, 20px) 0;
+            font-size: clamp(12px, 3vw, 16px);
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .main-content ul, .main-content ol {
             padding-left: clamp(15px, 5vw, 20px);
             margin-bottom: clamp(15px, 4vw, 20px);
         }
 
-        .main-content ul li {
+        .main-content ul li, .main-content ol li {
             font-size: clamp(12px, 3vw, 16px);
             margin-bottom: clamp(8px, 2vw, 10px);
             color: #333;
+        }
+
+        .main-content .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            margin: clamp(15px, 4vw, 20px) 0;
+        }
+
+        .main-content .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
         }
 
         .main-content .cta {
@@ -252,6 +289,30 @@
             font-weight: 600;
             font-size: clamp(12px, 3vw, 16px);
             margin-top: clamp(10px, 3vw, 20px);
+        }
+
+        .main-content .social-share {
+            display: flex;
+            gap: clamp(10px, 3vw, 15px);
+            margin-top: clamp(15px, 4vw, 20px);
+        }
+
+        .main-content .social-share a {
+            color: #fff;
+            background: #2e7d32;
+            padding: clamp(8px, 2vw, 10px);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: clamp(12px, 3vw, 16px);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-content .social-share a:hover {
+            background: #1b5e20;
         }
 
         .sidebar h3 {
@@ -297,11 +358,87 @@
             border-radius: 15px;
             text-decoration: none;
             font-size: clamp(10px, 3vw, 12px);
+            transition: all 0.3s ease;
         }
 
         .sidebar .tags a:hover {
             background: #2e7d32;
             color: #fff;
+        }
+
+        .sidebar .author-bio {
+            margin-top: clamp(20px, 5vw, 30px);
+            text-align: center;
+        }
+
+        .sidebar .author-bio img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: clamp(10px, 3vw, 15px);
+        }
+
+        .sidebar .author-bio p {
+            font-size: clamp(12px, 3vw, 14px);
+            color: #333;
+        }
+
+        /* Comments Section */
+        .comments {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: clamp(20px, 5vw, 40px) clamp(10px, 5vw, 20px);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comments h3 {
+            font-size: clamp(16px, 4vw, 20px);
+            color: #2e7d32;
+            margin-bottom: clamp(15px, 4vw, 20px);
+        }
+
+        .comment {
+            margin-bottom: clamp(15px, 4vw, 20px);
+            padding-bottom: clamp(10px, 3vw, 15px);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comment p {
+            font-size: clamp(12px, 3vw, 16px);
+            color: #333;
+        }
+
+        .comment .meta {
+            font-size: clamp(10px, 3vw, 14px);
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .comment-form {
+            margin-top: clamp(20px, 5vw, 30px);
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: clamp(10px, 3vw, 15px);
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: clamp(12px, 3vw, 16px);
+            margin-bottom: clamp(10px, 3vw, 15px);
+            resize: vertical;
+        }
+
+        .comment-form button {
+            background: #2e7d32;
+            color: #fff;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: clamp(12px, 3vw, 16px);
         }
 
         /* Newsletter Signup */
@@ -423,6 +560,7 @@
             .main-content,
             .sidebar {
                 min-width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -435,6 +573,7 @@
                 font-size: clamp(18px, 8vw, 28px);
             }
 
+            .hero-content p,
             .hero-content .meta {
                 font-size: clamp(10px, 4vw, 14px);
             }
@@ -444,12 +583,23 @@
             }
 
             .main-content p,
-            .main-content ul li {
+            .main-content ul li,
+            .main-content ol li,
+            .main-content blockquote {
                 font-size: clamp(10px, 4vw, 14px);
             }
 
             .sidebar .related-post img {
                 height: 80px;
+            }
+
+            .sidebar .author-bio img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .comments {
+                padding: clamp(15px, 5vw, 20px);
             }
         }
     </style>
@@ -482,8 +632,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Exploring Zion’s Hidden Trails</h1>
-            <p class="meta">By Drakshayani | August 8, 2025</p>
+            <h1>Ultimate Guide to Zion’s Hidden Trails</h1>
+            <p>Discover the lesser-known paths of Zion National Park for a serene hiking adventure.</p>
+            <div class="meta">
+                <span>By Drakshayani</span> | <span>August 8, 2025</span> | <span>8 min read</span>
+            </div>
         </div>
     </section>
 
@@ -491,33 +644,45 @@
     <div class="content-wrapper">
         <div class="main-content">
             <h2>Introduction</h2>
-            <p>Zion National Park is a hiker’s paradise, with its towering red rock canyons and breathtaking views. While popular trails like Angels Landing get all the attention, Zion’s hidden trails offer solitude and stunning scenery. This guide uncovers lesser-known paths perfect for adventurers seeking a quieter experience.</p>
+            <p>Zion National Park is a bucket-list destination for hikers, with its dramatic red rock canyons and iconic trails like Angels Landing. But beyond the crowds lie hidden trails that offer solitude, stunning views, and a deeper connection with nature. This guide dives into Zion’s lesser-known paths, perfect for adventurers seeking a quieter, more reflective experience.</p>
             <img src="https://images.unsplash.com/photo-1505826758259-7a03c4f86d91" alt="Zion Trail">
             <h2>Why Choose Hidden Trails?</h2>
-            <p>Hidden trails provide a chance to escape crowds and connect with nature. These paths often lead to secluded vistas, unique rock formations, and peaceful streams, making them ideal for reflective hikes or intimate group outings.</p>
+            <p>Hidden trails in Zion provide a unique escape from the park’s busier routes. These paths lead to secluded vistas, untouched streams, and rare rock formations, offering a sense of discovery. They’re ideal for hikers who crave peace or want to explore with a small group without the hustle of popular spots.</p>
+            <blockquote>“There’s something magical about finding a trail where the only sounds are the wind and your footsteps.” – Drakshayani, Adventurer Divine</blockquote>
+            <p>Many of these trails are also beginner-friendly, with moderate elevation gains and shorter distances, making them accessible to a wide range of hikers.</p>
+            <h2>Top Hidden Trails in Zion</h2>
+            <p>We’ve explored and researched three hidden gems that balance beauty, accessibility, and adventure:</p>
+            <ol>
+                <li><strong>Chinle Trail</strong>: A 16-mile round trip through desert landscapes, offering sweeping views and solitude. Perfect for experienced hikers seeking a full-day challenge.</li>
+                <li><strong>Northgate Peaks</strong>: A moderate 4.4-mile trail with panoramic views of Zion’s east side, ideal for intermediate hikers.</li>
+                <li><strong>Canyon Overlook</strong>: A short 1-mile hike with a stunning viewpoint, great for beginners or families looking for a quick adventure.</li>
+            </ol>
+            <h2>Tips for Hiking Zion’s Hidden Trails</h2>
+            <p>Before you hit these trails, here are some tips to ensure a safe and enjoyable hike:</p>
             <ul>
-                <li><strong>Less Crowded</strong>: Enjoy nature without the hustle.</li>
-                <li><strong>Unique Views</strong>: Discover sights not seen on main trails.</li>
-                <li><strong>Beginner-Friendly</strong>: Many hidden trails are less strenuous.</li>
+                <li><strong>Check Conditions</strong>: Verify trail status with park rangers, as weather can change quickly.</li>
+                <li><strong>Pack Smart</strong>: Bring water, snacks, and a map, as some trails have limited signage.</li>
+                <li><strong>Leave No Trace</strong>: Keep Zion pristine by packing out all waste.</li>
             </ul>
-            <h2>Top Hidden Trails</h2>
-            <p>Here are three trails we’ve researched for their beauty and accessibility:</p>
-            <ul>
-                <li><strong>Chinle Trail</strong>: A 16-mile round trip through desert landscapes, perfect for a full-day hike.</li>
-                <li><strong>Northgate Peaks</strong>: A moderate 4.4-mile trail with panoramic views of Zion’s east side.</li>
-                <li><strong>Canyon Overlook</strong>: A short 1-mile hike with a stunning viewpoint, great for beginners.</li>
-            </ul>
-            <p>Ready to explore? Check our full guide for trail maps and tips!</p>
-            <a href="#" class="cta">View Full Guide</a>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>Ready to explore Zion’s hidden trails? Our detailed guide includes maps, gear recommendations, and more to help you plan your adventure!</p>
+            <a href="#" class="cta">Download Full Trail Guide</a>
+            <div class="social-share">
+                <a href="#" title="Share on Twitter">𝕏</a>
+                <a href="#" title="Share on Instagram">📷</a>
+                <a href="#" title="Share on Facebook">f</a>
+            </div>
         </div>
         <div class="sidebar">
             <h3>Related Posts</h3>
             <div class="related-post">
-                <img src="https://images.unsplash.com/photo-1465189684280-6a0316a3e23f" alt="Related Post">
+                <img src="https://images.unsplash.com/photo-1465189684280-6a0316a3e23f" alt="Yosemite Post">
                 <a href="#">Yosemite in Winter: A Hiker’s Guide</a>
             </div>
             <div class="related-post">
-                <img src="https://images.unsplash.com/photo-1517824806704-9040b037703b" alt="Related Post">
+                <img src="https://images.unsplash.com/photo-1517824806704-9040b037703b" alt="Smokies Post">
                 <a href="#">Why the Smokies Are a Must-Hike</a>
             </div>
             <h3>Tags</h3>
@@ -526,9 +691,33 @@
                 <a href="#">Hiking</a>
                 <a href="#">Trails</a>
                 <a href="#">Beginner</a>
+                <a href="#">Adventure</a>
+            </div>
+            <div class="author-bio">
+                <h3>About the Author</h3>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb" alt="Author">
+                <p>Drakshayani is a passionate hiker and writer, sharing tips and stories from trails across the USA. When not exploring, she’s researching gear to help you adventure smarter.</p>
             </div>
         </div>
     </div>
+
+    <!-- Comments Section -->
+    <section class="comments">
+        <h3>Comments</h3>
+        <div class="comment">
+            <p class="meta">Jane Doe | August 8, 2025</p>
+            <p>Thanks for sharing these trails! I tried Canyon Overlook last week, and the view was incredible. Any tips for solo hikers?</p>
+        </div>
+        <div class="comment">
+            <p class="meta">John Smith | August 7, 2025</p>
+            <p>Chinle Trail sounds amazing! Is it suitable for beginners, or should I train more?</p>
+        </div>
+        <div class="comment-form">
+            <h3>Leave a Comment</h3>
+            <textarea placeholder="Your comment..." rows="5"></textarea>
+            <button>Post Comment</button>
+        </div>
+    </section>
 
     <!-- Newsletter Signup -->
     <section class="newsletter">
